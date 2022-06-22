@@ -37,7 +37,7 @@ jobs:
   test:
     timeout-minutes: 30
     runs-on: unbuntu-latest
-    needs: [build]
+    needs: 
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
@@ -56,16 +56,3 @@ jobs:
         run: yarn
       - name: Run jest  
         run: yarn test
-
-
-
-  deploy:
-      runs-on: ubuntu-latest
-      needs: [test]
-      steps:
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.12.12 
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "cs690-final-dev" #Must be unique in Heroku
-            heroku_email: "hai.tuan.nguyen.works@gmail.com"
