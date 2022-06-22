@@ -6,7 +6,7 @@ name: CD
 on:
   # Triggers the workflow on push or pull request events but only for the production branch
   push:
-    branches: [ prod ]
+    branches: [ production ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,4 +22,4 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "cs690-final-dev" #Must be unique in Heroku
-          heroku_email: "hai.tuan.nguyen.works@gmail.com" # random change
+          heroku_email: "hai.tuan.nguyen.works@gmail.com" # random change again
