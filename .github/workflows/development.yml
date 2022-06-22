@@ -36,9 +36,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm run test
-
     - name: Stop containers
       if: always()
       run: docker-compose -f "docker-compose.yml" down  
