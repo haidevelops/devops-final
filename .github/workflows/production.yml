@@ -22,4 +22,4 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "cs690-final-dev" #Must be unique in Heroku
-          heroku_email: "hai.tuan.nguyen.works@gmail.com"
+          heroku_email: "hai.tuan.nguyen.works@gmail.com" # random change
