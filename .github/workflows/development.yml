@@ -5,11 +5,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
-
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -36,7 +31,6 @@ jobs:
   test:
     timeout-minutes: 30
     runs-on: unbuntu-latest
-    needs: 
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
