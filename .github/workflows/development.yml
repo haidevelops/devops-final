@@ -37,6 +37,7 @@ jobs:
       run: npm install
 
   test:
+    timeout-minutes: 30
     runs-on: unbuntu-latest
     needs: [build]
     steps:
@@ -45,8 +46,20 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: "14.x"
-      - name: try to do something
-        run: echo "hello there"
+
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: running linter (eslint)
+        run: eslint . --ext .js,.jsx,.ts,.tsx
+
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run jest  
+        run: yarn test
+
+
 
   deploy:
       runs-on: ubuntu-latest
